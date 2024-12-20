@@ -1,0 +1,53 @@
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); // Filas automáticas con mínimo 300px por tarjeta.
+  gap: 20px; // Espacio entre las tarjetas.
+  justify-content: center; // Centra las tarjetas en la fila.
+
+  @media (max-width: 768px) {
+    gap: 15px; // Reduce el espacio entre tarjetas en pantallas medianas.
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // Cambia el tamaño mínimo a 250px en pantallas pequeñas.
+    gap: 10px; // Reduce aún más el espacio en pantallas pequeñas.
+  }
+}
+
+p-card {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05); // Animación de escala al pasar el cursor.
+  }
+
+  @media (max-width: 480px) {
+    &:hover {
+      transform: none; // Desactiva la animación en pantallas muy pequeñas.
+    }
+  }
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #007bff81, #0057b38a);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+
+  &:hover {
+    background-color: #0057b3; // Cambio de color al pasar el cursor.
+    transform: scale(1.05); // Aumenta ligeramente el tamaño al pasar el cursor.
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px; // Reduce el tamaño del texto del botón en pantallas pequeñas.
+    padding: 12px; // Reduce el padding.
+  }
+}
